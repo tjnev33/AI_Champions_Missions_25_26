@@ -1,0 +1,1611 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Champions — Farmington Public Schools</title>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #FAFAF8;
+  --bg-warm: #F4F2EE;
+  --bg-card: #FFFFFF;
+  --border: #E8E5DF;
+  --border-light: #F0EDE8;
+  --ink: #1A1A1A;
+  --ink-secondary: #4A4A48;
+  --ink-muted: #7A7A76;
+  --ink-faint: #A8A8A3;
+  --accent: #2563EB;
+  --accent-soft: #DBEAFE;
+  --accent-deep: #1D4ED8;
+  --teal: #0D9488;
+  --teal-soft: #CCFBF1;
+  --amber: #D97706;
+  --amber-soft: #FEF3C7;
+  --violet: #7C3AED;
+  --violet-soft: #EDE9FE;
+  --rose: #E11D48;
+  --rose-soft: #FFE4E6;
+  --green: #059669;
+  --green-soft: #D1FAE5;
+  --radius: 14px;
+  --radius-sm: 8px;
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.04), 0 1px 2px rgba(0,0,0,0.03);
+  --shadow-md: 0 4px 16px rgba(0,0,0,0.06), 0 1px 3px rgba(0,0,0,0.04);
+  --shadow-lg: 0 12px 40px rgba(0,0,0,0.08), 0 2px 8px rgba(0,0,0,0.04);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Outfit',sans-serif;
+  background:var(--bg);color:var(--ink);
+  overflow-x:hidden;line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+
+/* ───── NAV ───── */
+nav{
+  position:fixed;top:0;left:0;width:100%;z-index:100;
+  background:rgba(250,250,248,0.88);
+  backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
+  border-bottom:1px solid var(--border);
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 48px;height:64px;
+  transition:box-shadow 0.4s ease;
+}
+nav.scrolled{box-shadow:0 1px 20px rgba(0,0,0,0.06)}
+.nav-logo{
+  font-family:'Source Serif 4',serif;
+  font-weight:700;font-size:1.15rem;
+  color:var(--ink);letter-spacing:-0.02em;
+}
+.nav-logo span{color:var(--accent)}
+.nav-links{display:flex;gap:4px}
+.nav-links button{
+  font-family:'Outfit',sans-serif;
+  font-size:0.82rem;font-weight:500;
+  color:var(--ink-muted);background:none;border:none;
+  padding:6px 14px;border-radius:8px;
+  cursor:pointer;transition:all 0.25s ease;
+}
+.nav-links button:hover{color:var(--ink);background:rgba(0,0,0,0.04)}
+.nav-links button.active{color:var(--accent);background:var(--accent-soft)}
+
+/* ───── SECTIONS ───── */
+.section-wrapper{
+  max-width:1120px;margin:0 auto;padding:0 48px;
+}
+.section-full{
+  padding:80px 0;
+}
+.section-full:first-of-type{
+  padding-top:120px;
+}
+
+/* ───── HERO ───── */
+.hero{
+  text-align:center;
+  padding:140px 48px 80px;
+  max-width:800px;margin:0 auto;
+}
+.hero-badge{
+  display:inline-flex;align-items:center;gap:8px;
+  font-family:'IBM Plex Mono',monospace;
+  font-size:0.7rem;font-weight:500;
+  letter-spacing:0.12em;text-transform:uppercase;
+  color:var(--accent);background:var(--accent-soft);
+  padding:6px 16px;border-radius:100px;margin-bottom:24px;
+}
+.hero-badge .dot{
+  width:6px;height:6px;border-radius:50%;background:var(--accent);
+}
+.hero h1{
+  font-family:'Source Serif 4',serif;font-weight:700;
+  font-size:clamp(2.4rem,5.5vw,3.4rem);letter-spacing:-0.03em;
+  line-height:1.1;color:var(--ink);margin-bottom:16px;
+}
+.hero .subtitle{
+  font-size:1.1rem;color:var(--ink-secondary);
+  max-width:560px;margin:0 auto 32px;line-height:1.65;
+}
+.hero-quote{
+  background:var(--bg-warm);
+  border-left:3px solid var(--accent);
+  border-radius:0 var(--radius-sm) var(--radius-sm) 0;
+  padding:20px 28px;
+  max-width:600px;margin:0 auto;
+  text-align:left;
+}
+.hero-quote p{
+  font-family:'Source Serif 4',serif;
+  font-size:0.95rem;font-style:italic;
+  color:var(--ink-secondary);line-height:1.65;
+}
+.hero-quote strong{color:var(--ink)}
+
+/* ───── SECTION DIVIDER ───── */
+.section-divider{
+  border:none;border-top:1px solid var(--border-light);
+  max-width:1120px;margin:0 auto;
+}
+
+/* ───── SECTION HEADERS ───── */
+.section-label{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:0.65rem;font-weight:500;
+  letter-spacing:0.15em;text-transform:uppercase;
+  color:var(--accent);margin-bottom:8px;
+}
+.section-heading{
+  font-family:'Source Serif 4',serif;font-weight:700;
+  font-size:clamp(1.6rem,3.5vw,2.2rem);letter-spacing:-0.02em;
+  line-height:1.2;color:var(--ink);margin-bottom:8px;
+}
+.section-desc{
+  font-size:1rem;color:var(--ink-muted);
+  max-width:560px;line-height:1.65;margin-bottom:36px;
+}
+
+/* ───── PILLAR CARDS ───── */
+.pillars{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:16px;margin-bottom:32px;
+}
+.pillar-card{
+  background:var(--bg-card);border:1px solid var(--border);
+  border-radius:var(--radius);padding:28px 24px;
+  transition:all 0.3s ease;
+}
+.pillar-card:hover{
+  border-color:#D0CDC7;box-shadow:var(--shadow-md);transform:translateY(-2px);
+}
+.pillar-icon{
+  font-size:1.6rem;margin-bottom:12px;
+}
+.pillar-card h3{
+  font-family:'Source Serif 4',serif;font-weight:700;
+  font-size:1.05rem;color:var(--ink);margin-bottom:6px;
+}
+.pillar-card p{
+  font-size:0.88rem;color:var(--ink-secondary);line-height:1.55;
+}
+
+/* ───── NORTH STAR ───── */
+.north-star{
+  background:var(--bg-card);border:1px solid var(--border);
+  border-radius:var(--radius);padding:24px 28px;
+  display:flex;align-items:flex-start;gap:16px;
+}
+.north-star-icon{font-size:1.4rem;padding-top:2px}
+.north-star h4{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:0.62rem;font-weight:600;
+  letter-spacing:0.12em;text-transform:uppercase;
+  color:var(--amber);margin-bottom:4px;
+}
+.north-star p{
+  font-family:'Source Serif 4',serif;
+  font-size:0.95rem;font-style:italic;
+  color:var(--ink-secondary);line-height:1.55;
+}
+.north-star em{color:var(--ink);font-style:italic}
+
+/* ───── MISSION SECTION ───── */
+.phase-legend{
+  display:flex;justify-content:center;
+  gap:8px;flex-wrap:wrap;margin-bottom:12px;
+}
+.phase-tag{
+  display:flex;align-items:center;gap:6px;
+  font-family:'IBM Plex Mono',monospace;
+  font-size:0.65rem;font-weight:500;
+  letter-spacing:0.08em;text-transform:uppercase;
+  color:var(--ink-muted);padding:6px 14px;border-radius:8px;
+  border:1px solid var(--border-light);
+  cursor:pointer;transition:all 0.25s ease;background:transparent;
+}
+.phase-tag:hover{border-color:var(--border);background:var(--bg-card)}
+.phase-tag.active{
+  color:var(--ink);border-color:var(--border);
+  background:var(--bg-card);box-shadow:var(--shadow-sm);
+}
+.phase-dot{width:8px;height:8px;border-radius:50%}
+
+.controls-row{
+  display:flex;justify-content:center;gap:4px;margin-bottom:36px;
+}
+.view-btn{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:0.65rem;font-weight:500;
+  letter-spacing:0.06em;text-transform:uppercase;
+  color:var(--ink-faint);padding:5px 12px;border-radius:6px;
+  border:1px solid transparent;background:none;cursor:pointer;
+  transition:all 0.25s ease;
+}
+.view-btn:hover{color:var(--ink-muted)}
+.view-btn.active{
+  color:var(--ink-secondary);border-color:var(--border);background:var(--bg-card);
+}
+
+.hr-inner{border:none;border-top:1px solid var(--border-light);margin:0 0 36px}
+
+/* ───── GRID ───── */
+.mission-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(340px,1fr));
+  gap:16px;
+}
+.mission-grid.list-view{
+  grid-template-columns:1fr;max-width:720px;margin:0 auto;
+}
+
+/* ───── CARD ───── */
+.mission-card{
+  background:var(--bg-card);border:1px solid var(--border);
+  border-radius:var(--radius);overflow:hidden;
+  transition:all 0.35s ease;cursor:pointer;position:relative;
+  opacity:0;transform:translateY(24px);
+}
+.mission-card.visible{opacity:1;transform:translateY(0)}
+.mission-card:hover{
+  border-color:#D0CDC7;box-shadow:var(--shadow-md);transform:translateY(-2px);
+}
+.mission-card.visible:hover{transform:translateY(-2px)}
+
+.card-stripe{height:3px;width:100%}
+.card-body{padding:20px 24px 24px}
+
+.card-top{
+  display:flex;justify-content:space-between;
+  align-items:flex-start;margin-bottom:10px;
+}
+.mission-number{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:0.62rem;font-weight:500;
+  letter-spacing:0.15em;text-transform:uppercase;color:var(--ink-faint);
+}
+.phase-badge{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:0.55rem;font-weight:500;
+  letter-spacing:0.1em;text-transform:uppercase;
+  padding:3px 10px;border-radius:100px;
+}
+.card-title{
+  font-family:'Source Serif 4',serif;
+  font-size:1.2rem;font-weight:700;
+  letter-spacing:-0.01em;line-height:1.3;
+  color:var(--ink);margin-bottom:8px;
+}
+.card-overview{
+  font-size:0.88rem;line-height:1.6;
+  color:var(--ink-secondary);margin-bottom:16px;
+  font-style:italic;
+}
+.card-meta{display:flex;flex-direction:column;gap:8px}
+.meta-row{display:flex;align-items:flex-start;gap:10px}
+.meta-label{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:0.58rem;font-weight:500;
+  letter-spacing:0.1em;text-transform:uppercase;
+  color:var(--ink-faint);min-width:52px;padding-top:3px;flex-shrink:0;
+}
+.meta-value{
+  font-size:0.82rem;font-weight:400;
+  color:var(--ink-secondary);line-height:1.45;
+}
+.tool-chip{
+  display:inline-flex;align-items:center;gap:4px;
+  padding:2px 10px;border-radius:100px;
+  background:var(--teal-soft);border:1px solid rgba(13,148,136,0.15);
+  font-family:'IBM Plex Mono',monospace;
+  font-size:0.68rem;font-weight:500;color:var(--teal);margin-right:4px;
+}
+.privacy-pill{
+  display:inline-flex;align-items:center;gap:4px;
+  padding:2px 10px;border-radius:100px;
+  background:var(--rose-soft);border:1px solid rgba(225,29,72,0.12);
+  font-family:'IBM Plex Mono',monospace;
+  font-size:0.6rem;font-weight:500;color:var(--rose);
+}
+
+/* ───── TOOL QUICK REFERENCE ───── */
+.tool-ref{
+  margin:16px 0;
+  border:1px solid var(--border);
+  border-radius:var(--radius-sm);
+  overflow:hidden;
+}
+.tool-ref-toggle{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:12px 16px;
+  background:var(--bg-warm);
+  cursor:pointer;
+  transition:background 0.2s ease;
+}
+.tool-ref-toggle:hover{background:var(--bg-card)}
+.tool-ref-label{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:0.62rem;font-weight:600;
+  letter-spacing:0.1em;text-transform:uppercase;
+  color:var(--ink-muted);
+  display:flex;align-items:center;gap:6px;
+}
+.tool-ref-arrow{
+  font-size:0.7rem;color:var(--ink-faint);
+  transition:transform 0.3s ease;
+}
+.tool-ref.open .tool-ref-arrow{transform:rotate(180deg)}
+.tool-ref-body{
+  max-height:0;overflow:hidden;
+  transition:max-height 0.5s cubic-bezier(0.16,1,0.3,1);
+}
+.tool-ref.open .tool-ref-body{max-height:1200px}
+.tool-ref-inner{padding:4px 16px 16px}
+.tool-ref-card{
+  border:1px solid var(--border-light);
+  border-left:3px solid var(--accent);
+  border-radius:0 var(--radius-sm) var(--radius-sm) 0;
+  padding:12px 16px;
+  margin-bottom:8px;
+  background:var(--bg-card);
+}
+.tool-ref-card:last-child{margin-bottom:0}
+.tool-ref-card h4{
+  font-family:'Outfit',sans-serif;
+  font-size:0.84rem;font-weight:600;
+  color:var(--ink);margin-bottom:3px;
+}
+.tool-ref-card p{
+  font-size:0.78rem;color:var(--ink-secondary);
+  line-height:1.5;margin-bottom:2px;
+}
+.tool-ref-card .tool-example{
+  font-size:0.72rem;color:var(--ink-muted);
+  font-style:italic;line-height:1.45;
+}
+
+/* ───── EXPAND ───── */
+.card-expand{
+  max-height:0;overflow:hidden;
+  transition:max-height 0.55s cubic-bezier(0.16,1,0.3,1);
+}
+.mission-card.expanded .card-expand{max-height:2000px}
+.expand-inner{padding-top:4px}
+.card-rule{border:none;border-top:1px solid var(--border-light);margin:16px 0}
+
+.steps-label{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:0.6rem;font-weight:500;
+  letter-spacing:0.15em;text-transform:uppercase;
+  color:var(--ink-faint);margin-bottom:10px;
+}
+.step-group{margin-bottom:14px}
+.step-heading{
+  font-size:0.86rem;font-weight:600;
+  color:var(--ink);margin-bottom:4px;
+  display:flex;align-items:flex-start;gap:8px;
+}
+.step-num{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:0.65rem;font-weight:600;color:var(--accent);
+  min-width:20px;padding-top:2px;flex-shrink:0;
+}
+.step-details{padding-left:28px}
+.step-details li{
+  font-size:0.82rem;color:var(--ink-secondary);
+  line-height:1.55;margin-bottom:3px;
+  list-style:none;position:relative;padding-left:14px;
+}
+.step-details li::before{
+  content:'·';position:absolute;left:0;
+  color:var(--ink-faint);font-weight:700;font-size:1.1rem;line-height:1.35;
+}
+
+.deliverables-box{
+  margin-top:16px;padding:16px 20px;
+  background:var(--green-soft);
+  border:1px solid rgba(5,150,105,0.12);
+  border-radius:var(--radius-sm);
+}
+.deliverables-header{
+  display:flex;align-items:center;justify-content:space-between;
+  margin-bottom:12px;
+}
+.deliverables-label{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:0.58rem;font-weight:600;
+  letter-spacing:0.12em;text-transform:uppercase;
+  color:var(--green);
+}
+.tracker-link{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:0.55rem;font-weight:500;
+  letter-spacing:0.06em;
+  color:var(--ink-faint);
+  font-style:italic;
+}
+.deliverable-field{
+  margin-bottom:10px;
+}
+.deliverable-field:last-child{margin-bottom:0}
+.field-label{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:0.56rem;font-weight:600;
+  letter-spacing:0.08em;text-transform:uppercase;
+  color:var(--ink-muted);
+  margin-bottom:2px;
+  display:flex;align-items:center;gap:6px;
+}
+.field-icon{
+  font-size:0.72rem;
+}
+.field-value{
+  font-size:0.82rem;color:var(--ink-secondary);line-height:1.55;
+  padding-left:20px;
+}
+
+.guide-box{
+  margin-top:12px;padding:14px 16px;
+  background:var(--accent-soft);
+  border:1px solid rgba(37,99,235,0.12);
+  border-radius:var(--radius-sm);
+  position:relative;
+}
+.guide-label{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:0.58rem;font-weight:600;
+  letter-spacing:0.12em;text-transform:uppercase;
+  color:var(--accent);margin-bottom:4px;
+}
+.guide-explainer{
+  font-size:0.76rem;color:var(--ink-muted);
+  line-height:1.5;margin-bottom:8px;
+  font-style:normal;
+}
+.guide-text{
+  font-family:'Source Serif 4',serif;
+  font-size:0.82rem;font-style:italic;
+  color:var(--ink-secondary);line-height:1.55;
+}
+.guide-copy-btn{
+  display:inline-flex;align-items:center;gap:4px;
+  margin-top:10px;
+  font-family:'IBM Plex Mono',monospace;
+  font-size:0.58rem;font-weight:500;
+  letter-spacing:0.08em;text-transform:uppercase;
+  color:var(--accent);background:var(--bg-card);
+  border:1px solid rgba(37,99,235,0.2);
+  padding:5px 12px;border-radius:6px;
+  cursor:pointer;transition:all 0.2s ease;
+}
+.guide-copy-btn:hover{
+  background:rgba(37,99,235,0.08);
+  border-color:var(--accent);
+}
+.guide-copy-btn.copied{
+  color:var(--green);
+  border-color:rgba(5,150,105,0.3);
+  background:var(--green-soft);
+}
+
+.card-footer{
+  display:flex;justify-content:space-between;
+  align-items:center;margin-top:16px;
+}
+.expand-hint{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:0.6rem;font-weight:500;letter-spacing:0.08em;
+  color:var(--ink-faint);transition:color 0.25s ease;
+  display:flex;align-items:center;gap:4px;
+}
+.mission-card:hover .expand-hint{color:var(--accent)}
+.expand-arrow{
+  display:inline-block;transition:transform 0.3s ease;font-size:0.7rem;
+}
+.mission-card.expanded .expand-arrow{transform:rotate(180deg)}
+
+/* ───── COACHING / SUPPORT ───── */
+.support-cards{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:16px;
+}
+.support-card{
+  background:var(--bg-card);border:1px solid var(--border);
+  border-radius:var(--radius);padding:24px;
+  transition:all 0.3s ease;
+}
+.support-card:hover{
+  border-color:#D0CDC7;box-shadow:var(--shadow-md);transform:translateY(-2px);
+}
+.support-icon{font-size:1.4rem;margin-bottom:10px}
+.support-card h3{
+  font-family:'Source Serif 4',serif;font-weight:700;
+  font-size:1.02rem;color:var(--ink);margin-bottom:6px;
+}
+.support-card p{
+  font-size:0.86rem;color:var(--ink-secondary);line-height:1.55;
+  margin-bottom:10px;
+}
+.support-tags{display:flex;flex-wrap:wrap;gap:6px}
+.support-tag{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:0.55rem;font-weight:500;
+  letter-spacing:0.06em;
+  color:var(--ink-muted);
+  background:var(--bg-warm);
+  padding:3px 10px;border-radius:100px;
+  border:1px solid var(--border-light);
+}
+.support-note{
+  background:var(--bg-card);border:1px solid var(--border);
+  border-radius:var(--radius);padding:20px 24px;
+  margin-top:20px;text-align:center;
+}
+.support-note p{
+  font-family:'Source Serif 4',serif;
+  font-size:0.92rem;font-style:italic;
+  color:var(--ink-secondary);line-height:1.55;
+}
+.support-note strong{color:var(--ink);font-style:normal}
+
+/* ───── HERO STATUS ───── */
+.hero-status{
+  display:inline-flex;align-items:center;gap:8px;
+  font-family:'IBM Plex Mono',monospace;
+  font-size:0.68rem;font-weight:500;
+  letter-spacing:0.06em;
+  color:var(--ink-muted);
+  margin-top:24px;
+}
+.hero-status .status-dot{
+  width:7px;height:7px;border-radius:50%;
+}
+.hero-status.pre-launch .status-dot{background:var(--amber)}
+.hero-status.in-progress .status-dot{
+  background:var(--green);
+  animation:pulse-status 2s ease-in-out infinite;
+}
+.hero-status.completed .status-dot{background:var(--green)}
+@keyframes pulse-status{0%,100%{opacity:1}50%{opacity:0.4}}
+
+/* ───── NAV CLASSROOM LINK ───── */
+.nav-classroom{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:0.68rem;font-weight:500;
+  letter-spacing:0.04em;
+  color:var(--accent);
+  text-decoration:none;
+  padding:5px 14px;border-radius:8px;
+  border:1px solid rgba(37,99,235,0.2);
+  transition:all 0.25s ease;
+  white-space:nowrap;
+}
+.nav-classroom:hover{
+  background:var(--accent-soft);
+  border-color:var(--accent);
+}
+
+/* ───── FOOTER LINK ───── */
+.footer-link{
+  color:var(--accent);text-decoration:none;
+  border-bottom:1px solid rgba(37,99,235,0.3);
+  transition:border-color 0.2s ease;
+}
+.footer-link:hover{border-color:var(--accent)}
+
+/* ───── REVEAL ───── */
+.reveal{
+  opacity:0;transform:translateY(30px);
+  transition:opacity 0.7s ease,transform 0.7s ease;
+}
+.reveal.visible{opacity:1;transform:translateY(0)}
+
+/* ───── FOOTER ───── */
+.site-footer{
+  text-align:center;padding:48px;
+  border-top:1px solid var(--border-light);
+  margin-top:48px;
+}
+.site-footer p{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:0.65rem;color:var(--ink-faint);
+  letter-spacing:0.05em;
+}
+
+/* ───── VERTICAL JOURNEY TIMELINE ───── */
+.journey{
+  position:relative;
+  max-width:640px;
+  margin:0 auto;
+  padding:0 0 0 48px;
+}
+.journey-line{
+  position:absolute;
+  top:0;bottom:0;left:23px;
+  width:2px;
+  background:var(--border);
+  z-index:0;
+}
+.journey-progress{
+  position:absolute;top:0;left:0;
+  width:100%;
+  background:linear-gradient(180deg,var(--accent),var(--violet),var(--amber),var(--green));
+  border-radius:2px;
+  transition:height 0.6s ease;
+}
+
+/* Phase divider */
+.phase-divider{
+  position:relative;
+  padding:28px 0 16px;
+  margin-left:-48px;
+}
+.phase-divider:first-child{padding-top:0}
+.phase-label-pill{
+  display:inline-flex;align-items:center;gap:6px;
+  font-family:'IBM Plex Mono',monospace;
+  font-size:0.6rem;font-weight:600;
+  letter-spacing:0.12em;text-transform:uppercase;
+  padding:5px 14px;border-radius:100px;
+  margin-left:48px;
+}
+
+/* Journey node */
+.journey-node{
+  position:relative;
+  padding:12px 0 28px;
+  display:flex;align-items:flex-start;gap:20px;
+}
+.journey-node:last-child{padding-bottom:0}
+
+.node-dot-wrap{
+  position:absolute;
+  left:-48px;top:14px;
+  width:46px;
+  display:flex;align-items:center;justify-content:center;
+  z-index:2;
+}
+.node-dot{
+  width:14px;height:14px;border-radius:50%;
+  border:2px solid var(--border);
+  background:var(--bg);
+  transition:all 0.3s ease;
+  flex-shrink:0;
+}
+.journey-node.completed .node-dot{
+  border-color:var(--accent);background:var(--accent);
+}
+.journey-node.current .node-dot{
+  width:16px;height:16px;
+  border-color:var(--accent);background:var(--bg-card);
+  box-shadow:0 0 0 4px var(--accent-soft),0 0 14px rgba(37,99,235,0.2);
+  animation:pulse-dot 2s ease-in-out infinite;
+}
+@keyframes pulse-dot{
+  0%,100%{box-shadow:0 0 0 4px var(--accent-soft),0 0 14px rgba(37,99,235,0.2)}
+  50%{box-shadow:0 0 0 7px var(--accent-soft),0 0 20px rgba(37,99,235,0.3)}
+}
+.journey-node.buffer .node-dot{
+  border-style:dashed;border-color:var(--ink-faint);
+}
+
+/* Node card */
+.node-card{
+  flex:1;
+  background:var(--bg-card);
+  border:1px solid var(--border);
+  border-radius:var(--radius-sm);
+  padding:16px 20px;
+  transition:all 0.3s ease;
+  cursor:pointer;
+}
+.node-card:hover{
+  border-color:#D0CDC7;
+  box-shadow:var(--shadow-sm);
+}
+.journey-node.current .node-card:hover{
+  box-shadow:0 0 0 1px var(--accent),var(--shadow-lg);
+}
+.journey-node.buffer .node-card{
+  cursor:default;
+}
+.journey-node.current .node-card{
+  border-color:var(--accent);
+  background:var(--accent-soft);
+  box-shadow:0 0 0 1px var(--accent),var(--shadow-md);
+}
+.journey-node.current .node-card .node-week{color:var(--accent-deep)}
+.journey-node.current .node-card .node-date{color:var(--accent-deep)}
+.journey-node.current .node-card .node-title{color:var(--accent-deep)}
+.journey-node.current .node-card .node-artifact{color:var(--ink-secondary)}
+.journey-node.completed .node-card{
+  opacity:0.7;
+}
+.journey-node.buffer .node-card{
+  background:var(--bg);
+  border-style:dashed;
+  border-color:var(--border-light);
+}
+.node-top{
+  display:flex;align-items:center;justify-content:space-between;
+  margin-bottom:4px;
+}
+.node-week{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:0.58rem;font-weight:500;
+  letter-spacing:0.1em;text-transform:uppercase;
+  color:var(--ink-faint);
+}
+.journey-node.current .node-week{color:var(--accent);font-weight:600}
+.node-date{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:0.55rem;color:var(--ink-faint);
+}
+.journey-node.current .node-date{color:var(--accent)}
+.node-title{
+  font-family:'Source Serif 4',serif;
+  font-size:1.02rem;font-weight:700;
+  color:var(--ink);line-height:1.35;
+  margin-bottom:2px;
+}
+.journey-node.buffer .node-title{
+  font-style:italic;color:var(--ink-faint);font-weight:400;
+  font-family:'Outfit',sans-serif;font-size:0.88rem;
+}
+.journey-node.current .node-title{color:var(--accent-deep)}
+.node-artifact{
+  font-size:0.78rem;color:var(--ink-muted);line-height:1.5;
+}
+.node-current-badge{
+  display:inline-flex;align-items:center;gap:4px;
+  font-family:'IBM Plex Mono',monospace;
+  font-size:0.55rem;font-weight:600;
+  letter-spacing:0.08em;text-transform:uppercase;
+  color:var(--accent);background:var(--accent-soft);
+  padding:2px 8px;border-radius:100px;
+  margin-top:8px;
+}
+.node-current-badge::before{
+  content:'';width:5px;height:5px;border-radius:50%;
+  background:var(--accent);
+  animation:pulse-badge 2s ease-in-out infinite;
+}
+@keyframes pulse-badge{0%,100%{opacity:1}50%{opacity:0.4}}
+.node-link{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:0.58rem;font-weight:500;
+  letter-spacing:0.06em;
+  color:var(--ink-faint);
+  margin-top:8px;
+  transition:color 0.25s ease;
+}
+.node-card:hover .node-link{color:var(--accent)}
+.journey-node.current .node-link{color:var(--accent)}
+
+/* Timeline legend */
+.timeline-legend{
+  display:flex;justify-content:center;
+  gap:20px;margin-top:32px;flex-wrap:wrap;
+}
+.legend-item{
+  display:flex;align-items:center;gap:6px;
+  font-family:'IBM Plex Mono',monospace;
+  font-size:0.6rem;color:var(--ink-muted);
+  letter-spacing:0.04em;
+}
+.legend-dot{width:10px;height:10px;border-radius:50%}
+.legend-dot.completed{background:var(--accent)}
+.legend-dot.current{
+  border:2px solid var(--accent);background:var(--bg-card);
+  box-shadow:0 0 0 2px var(--accent-soft);
+}
+.legend-dot.upcoming{border:2px solid var(--border);background:var(--bg)}
+.legend-dot.buffer{border:2px dashed var(--ink-faint);background:var(--bg)}
+
+/* Flexibility note */
+.flex-note{
+  background:var(--bg-card);border:1px solid var(--border);
+  border-radius:var(--radius);padding:20px 24px;
+  margin-top:28px;max-width:640px;margin-left:auto;margin-right:auto;
+  display:flex;align-items:flex-start;gap:14px;
+}
+.flex-note-icon{font-size:1.2rem;padding-top:1px}
+.flex-note h4{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:0.62rem;font-weight:600;
+  letter-spacing:0.1em;text-transform:uppercase;
+  color:var(--teal);margin-bottom:3px;
+}
+.flex-note p{
+  font-size:0.88rem;color:var(--ink-secondary);line-height:1.55;
+}
+
+/* ───── RESPONSIVE ───── */
+@media(max-width:900px){
+  nav{padding:0 24px}
+  .hero{padding:110px 24px 60px}
+  .section-wrapper{padding:0 24px}
+  .pillars{grid-template-columns:1fr}
+  .support-cards{grid-template-columns:1fr}
+  .mission-grid{grid-template-columns:1fr}
+  .timeline-weeks{grid-template-columns:repeat(6,1fr);row-gap:28px}
+  .timeline-line{display:none}
+  .journey{padding-left:40px}
+  .journey-line{left:17px}
+  .node-dot-wrap{left:-40px;width:38px}
+  .phase-divider{margin-left:-40px}
+  .phase-label-pill{margin-left:40px}
+}
+@media(max-width:480px){
+  .hero{padding:90px 16px 48px}
+  nav{padding:0 16px}
+  .nav-links{display:none}
+  .section-wrapper{padding:0 16px}
+}
+</style>
+</head>
+<body>
+
+<!-- ═══ NAV ═══ -->
+<nav id="mainNav">
+  <div class="nav-logo"><span>AI</span> Champions</div>
+  <div class="nav-links">
+    <button onclick="smoothNav('overview')" id="nav-overview">Overview</button>
+    <button onclick="smoothNav('pacing')" id="nav-pacing">Pacing</button>
+    <button onclick="smoothNav('missions')" id="nav-missions">Missions</button>
+    <button onclick="smoothNav('support')" id="nav-support">Support</button>
+    <a href="https://classroom.google.com/c/ODUwNTQyMzI0MjUw" class="nav-classroom" id="classroomLink" target="_blank">Google Classroom ↗</a>
+  </div>
+</nav>
+
+<!-- ═══ HERO ═══ -->
+<section class="hero reveal" id="top">
+  <div class="hero-badge"><span class="dot"></span> Farmington Public Schools</div>
+  <h1>AI Champions</h1>
+  <p class="subtitle">Learners leading learners — helping our staff explore what AI makes possible, <em>responsibly</em>.</p>
+  <div class="hero-quote">
+    <p>The biggest risk isn't AI disruption — it's believing that <strong>what we do now is all there is</strong>. Our job is to notice the unseen opportunities forming and help colleagues ask: <strong>"What new thing is this making possible in my classroom, my workflow, and student learning?"</strong></p>
+  </div>
+  <div class="hero-status" id="heroStatus">
+    <span class="status-dot"></span>
+    <span class="status-text"></span>
+  </div>
+</section>
+
+<hr class="section-divider">
+
+<!-- ═══ PROGRAM OVERVIEW ═══ -->
+<section class="section-full" id="overview">
+  <div class="section-wrapper">
+    <div class="reveal">
+      <div class="section-label">The Roadmap</div>
+      <h2 class="section-heading">What Is an AI Champion?</h2>
+      <p class="section-desc">Lead by example. Explore AI to enrich teaching and learning — aligned to our FPS AI Use Guide and shared principles.</p>
+    </div>
+
+    <div class="pillars reveal">
+      <div class="pillar-card">
+        <div class="pillar-icon">🔬</div>
+        <h3>Explore &amp; Experiment</h3>
+        <p>Try AI tools in low-stakes settings. Build fluency through small, practical challenges — not theory alone.</p>
+      </div>
+      <div class="pillar-card">
+        <div class="pillar-icon">🧭</div>
+        <h3>Model Responsible Use</h3>
+        <p>Demonstrate what thoughtful AI integration looks like — including what <em>not</em> to do — so colleagues see the guardrails in action.</p>
+      </div>
+      <div class="pillar-card">
+        <div class="pillar-icon">🤝</div>
+        <h3>Lead &amp; Lift Others</h3>
+        <p>Grow from personal skill-building into instructional leadership — sharing resources, running micro-PDs, and supporting colleagues.</p>
+      </div>
+    </div>
+
+    <div class="north-star reveal">
+      <div class="north-star-icon">⭐</div>
+      <div>
+        <h4>North Star — Ask This Every Week</h4>
+        <p>"Does this deepen learning, strengthen student agency, and reduce busywork — <em>without bypassing thinking?</em>"</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="section-divider">
+
+<!-- ═══ PACING GUIDE ═══ -->
+<section class="section-full" id="pacing">
+  <div class="section-wrapper">
+    <div class="reveal">
+      <div class="section-label">Suggested Pacing</div>
+      <h2 class="section-heading">Your 12-Week Journey</h2>
+      <p class="section-desc">10 missions across 12 weeks — aim for roughly one per week, with a 2-week buffer built in for life.</p>
+    </div>
+
+    <div class="journey reveal" id="journeyTimeline">
+      <div class="journey-line"><div class="journey-progress" id="journeyProgress"></div></div>
+      <!-- populated by JS -->
+    </div>
+
+    <div class="timeline-legend reveal">
+      <div class="legend-item"><span class="legend-dot completed"></span> Completed</div>
+      <div class="legend-item"><span class="legend-dot current"></span> Current week</div>
+      <div class="legend-item"><span class="legend-dot upcoming"></span> Upcoming</div>
+      <div class="legend-item"><span class="legend-dot buffer"></span> Buffer</div>
+    </div>
+
+    <div class="flex-note reveal">
+      <div class="flex-note-icon">🔄</div>
+      <div>
+        <h4>Built-in Flexibility</h4>
+        <p>The suggested pace is just that — a suggestion. You have 12 full weeks to complete 10 missions. Need to double up one week and skip the next? Go for it. The buffer weeks are there so you never feel behind. What matters is finishing, not matching the calendar perfectly.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="section-divider">
+
+<!-- ═══ MISSIONS ═══ -->
+<section class="section-full" id="missions">
+  <div class="section-wrapper">
+    <div class="reveal">
+      <div class="section-label">The Missions</div>
+      <h2 class="section-heading">10 Weeks of Tiny Experiments</h2>
+      <p class="section-desc">Each mission is a short, practical challenge. Complete them at your own pace using Gemini &amp; NotebookLM.</p>
+    </div>
+
+    <div class="phase-legend reveal" id="phaseLegend">
+      <button class="phase-tag active" data-phase="all">
+        <span class="phase-dot" style="background:linear-gradient(135deg,var(--accent),var(--green))"></span>All Phases
+      </button>
+      <button class="phase-tag" data-phase="foundation">
+        <span class="phase-dot" style="background:var(--accent)"></span>Foundation
+      </button>
+      <button class="phase-tag" data-phase="precision">
+        <span class="phase-dot" style="background:var(--violet)"></span>Precision
+      </button>
+      <button class="phase-tag" data-phase="builder">
+        <span class="phase-dot" style="background:var(--amber)"></span>Builder
+      </button>
+      <button class="phase-tag" data-phase="showcase">
+        <span class="phase-dot" style="background:var(--green)"></span>Showcase
+      </button>
+    </div>
+
+    <div class="controls-row reveal">
+      <button class="view-btn" data-view="grid">Grid</button>
+      <button class="view-btn active" data-view="list">List</button>
+    </div>
+
+    <hr class="hr-inner">
+
+    <div class="mission-grid list-view" id="missionGrid"></div>
+  </div>
+</section>
+
+<hr class="section-divider">
+
+<!-- ═══ SUPPORT ═══ -->
+<section class="section-full" id="support">
+  <div class="section-wrapper">
+    <div class="reveal">
+      <div class="section-label">Support</div>
+      <h2 class="section-heading">You're Not Doing This Alone</h2>
+      <p class="section-desc">Coaching is built into the program, and extra help is always available when you need it.</p>
+    </div>
+
+    <div class="support-cards reveal">
+      <div class="support-card">
+        <div class="support-icon">💬</div>
+        <h3>Coaching Check-Ins</h3>
+        <p>You'll participate in coaching sessions throughout the 10 weeks — staggered conversations to troubleshoot, refine your work, and keep momentum going.</p>
+        <div class="support-tags">
+          <span class="support-tag">Built into the program</span>
+          <span class="support-tag">Personalized</span>
+        </div>
+      </div>
+      <div class="support-card">
+        <div class="support-icon">✉️</div>
+        <h3>Quick Questions</h3>
+        <p>Got a quick question or need a thought partner? Email Andy or TJ anytime — no need to wait for a scheduled check-in.</p>
+        <div class="support-tags">
+          <span class="support-tag">Email anytime</span>
+          <span class="support-tag">Fast response</span>
+        </div>
+      </div>
+      <div class="support-card">
+        <div class="support-icon">🤝</div>
+        <h3>In-Person or Virtual</h3>
+        <p>Need to talk something through in depth? Reach out to schedule a meeting — in person or virtual, whatever works best for you.</p>
+        <div class="support-tags">
+          <span class="support-tag">On request</span>
+          <span class="support-tag">Flexible format</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="support-note reveal">
+      <p><strong>The goal is support, not surveillance.</strong> Coaching exists to help you succeed — to make your experiments sharper, your reflections deeper, and your impact bigger.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ WHAT'S NEXT ═══ -->
+<section class="section-full" id="whats-next">
+  <div class="section-wrapper" style="max-width:640px;text-align:center">
+    <div class="reveal">
+      <div class="section-label">After the Missions</div>
+      <h2 class="section-heading">What's Next?</h2>
+      <p style="font-size:0.95rem;color:var(--ink-secondary);line-height:1.65;margin-bottom:24px;">Completing 10 missions is just the beginning. As an AI Champion, you're building something that scales beyond this cohort — your micro-PD, your tools, and your expertise are resources your colleagues need.</p>
+      <div class="north-star reveal" style="text-align:left">
+        <div class="north-star-icon">🚀</div>
+        <div>
+          <h4 style="color:var(--green)">Think About</h4>
+          <p style="font-style:normal;color:var(--ink-secondary);font-family:'Outfit',sans-serif;font-size:0.88rem">When and where can you facilitate the micro-PD you built in Mission 10? How else can you support colleagues in your grade level, department, or school — whether it's a hallway conversation, a team meeting demo, or ongoing mentorship?</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FOOTER ═══ -->
+<footer class="site-footer">
+  <p>AI Champions · Farmington Public Schools · 2025–2026</p>
+  <p style="margin-top:8px"><a href="https://classroom.google.com/c/ODUwNTQyMzI0MjUw" class="footer-link" target="_blank">Go to Google Classroom ↗</a></p>
+</footer>
+
+<script>
+/* ═══ MISSION DATA ═══ */
+const missions=[
+  {
+    num:1, phase:"foundation", color:"var(--accent)", colorSoft:"var(--accent-soft)",
+    title:"Mission Tracker",
+    overview:"Use Gemini to build your mission tracker — a single document you'll use to log artifacts, reflections, and how you're putting things into practice across all 10 missions.",
+    tools:["Gemini"],
+    artifact:"Mission tracker (Doc or Sheet) + personal AI goals",
+    privacy:false,
+    steps:[
+      {heading:"Choose Your Path", details:["You have two options for building your tracker. Pick the one that fits your style:","Option A: Use Gemini with the canvas tool to create a tracker as a Google Doc.","Option B: Use Gemini inside Google Sheets to build a tracker as a spreadsheet.","Either works — Option A is great if you prefer a document-style layout; Option B is great if you like spreadsheets and want to sort/filter later.","Both options require the AI Champions Mission Guide as context so your tracker has the correct mission names and order. Copy the link here: <a href='https://docs.google.com/document/d/1L1IGEh2l-0U6ZD35oyQLUX_RZ4QtXgWr5LOXqE6m3Zc/edit?usp=sharing' target='_blank' style='color:var(--accent);text-decoration:underline'>AI Champions Mission Guide</a> <button class='guide-copy-btn' data-prompt='https://docs.google.com/document/d/1L1IGEh2l-0U6ZD35oyQLUX_RZ4QtXgWr5LOXqE6m3Zc/edit?usp=sharing' style='margin-left:6px;font-size:0.58rem'>Copy link</button>"]},
+      {heading:"Option A — Gemini + Canvas (Google Doc)", details:["Open Gemini (gemini.google.com) and start a new conversation.","First, select the Canvas tool from the tools menu — this needs to be active before you begin.","Next, attach the AI Champions Mission Guide to the chat by clicking the attachment icon (+) and pasting the link (you can copy it from step 1 above) or uploading the file. This gives Gemini the 10 mission titles and numbers it needs.","Then prompt Gemini to create a mission tracker for the program with columns for: mission number, mission name, artifact link, reflection (+ / – / Next), putting it into practice, and date completed.","Gemini will generate the tracker directly in the canvas as an editable document.","Refine the layout, then export or copy it into a Google Doc. Bookmark it."]},
+      {heading:"Option B — Gemini in Google Sheets", details:["Create a new Google Sheet.","Click the \"Ask Gemini\" button (✨) in the top-right corner to open the Gemini side panel.","Provide the AI Champions Mission Guide as context by pasting the link into the chat or referencing the document. This gives Gemini the 10 mission titles and numbers it needs.","Then prompt Gemini to create a table with a row for each mission and columns for: mission number, mission name, artifact link, reflection (+ / – / Next), putting it into practice, and date completed.","Review what Gemini generates, click \"Insert\" to add it to your sheet, and adjust formatting as needed."]},
+      {heading:"Set Your Goals for the Program", details:["Add a section for 2–3 personal goals for what you want to get out of the AI Champions experience (in your doc or on a separate tab in your sheet)."]},
+      {heading:"Define Your Guardrails", details:["Review the Staff Use Agreements in the <a href='https://docs.google.com/document/d/1ahW7O8_jYpgmDDvFXSx6mebckB_QNhxePJ5YolkkyTw/edit?tab=t.zgo4kc6j7lx5' target='_blank' style='color:var(--accent);text-decoration:underline'>FPS AI Use Guide</a>.","Based on those expectations, write 3–5 personal guardrails for how you'll use AI throughout the program.","Make them specific to your practice — for example: \"I'll always review AI-generated materials for accuracy before sharing with students\" or \"I won't enter student names or identifying info into AI tools.\""]},
+      {heading:"Bookmark and Prepare", details:["Star or bookmark your tracker — you'll return to it after every mission.","Review the full mission list so you know what's ahead."]}
+    ],
+    proof:"",
+    deliverables:{
+      artifact:"Share your completed Mission Tracker (Doc or Sheet) via the assignment in Google Classroom — include your personal goals and guardrails",
+      reflection:"Complete in your Mission Tracker: What went well (+), what was tricky (–), what you'll do next (Next)",
+      classroomMove:"Try this: Pick one thing from your goals or guardrails and put it into practice this week."
+    },
+    guideMe:"Guide me through creating a mission tracker for the AI Champions program. I've attached the AI Champions Mission Guide with all 10 missions. Ask me whether I'd prefer to use the Canvas tool to create a Google Doc or the Gemini integration in Google Sheets. If I choose the Google Doc option, tell me to first select the Canvas tool from the tools menu, then attach the AI Champions Mission Guide, and then prompt you to create the tracker. Walk me through editing it in the canvas and exporting it to a Google Doc. If I choose Sheets, walk me through opening the Gemini side panel, providing the Mission Guide for context, and building the tracker table. Either way, help me include columns for mission number, mission name, artifact link, reflection, putting it into practice, and date completed."
+  },
+  {
+    num:2, phase:"foundation", color:"var(--accent)", colorSoft:"var(--accent-soft)",
+    title:"Model / Tool Mapping for Educators",
+    overview:"Experiment with Gemini and NotebookLM on real teaching tasks — switching between tools, features, and models — to discover what works best for different parts of your practice.",
+    tools:["Gemini","NotebookLM"],
+    artifact:"Tool map built from hands-on experimentation (3 tasks → tools/models tried → what worked → safety notes)",
+    privacy:false,
+    toolRef:[
+      {name:"Canvas", desc:"Lesson plans, activities, graphic organizers, rubrics, parent letters — anything you'd want to edit and refine collaboratively with AI", example:"A tiered vocabulary activity for 3rd grade science"},
+      {name:"Create Image", desc:"Visuals for lessons, anchor charts, classroom decor, student-facing materials", example:"An illustration of the water cycle for a K–1 science poster"},
+      {name:"Guided Learning", desc:"Learning a new concept yourself, exploring a topic before teaching it, building background knowledge", example:"Understanding growth mindset research to inform a classroom practice"},
+      {name:"Create Music", desc:"Transition songs, classroom routines, content-specific jingles, calming background audio", example:"A 60-second transition song for clean-up time in kindergarten"},
+      {name:"Deep Research", desc:"In-depth exploration of a topic using multiple sources — generates a structured report with citations", example:"Researching evidence-based strategies for teaching fractions to struggling learners"}
+    ],
+    steps:[
+      {heading:"Choose 3 Teaching Tasks", details:["Pick 3 tasks you actually need to do — not hypothetical ones. These should span different types of work.","Examples: planning a lesson, writing feedback on student work, differentiating a text or activity, drafting a parent email, creating an assessment, summarizing a professional article."]},
+      {heading:"Set Up Your Tool Map Template", details:["Before you start experimenting, create a simple template to record your results — a table or doc with columns for: task, tool/model used, what you tried, output quality, and safety notes.","This way you can capture what you learn in real time instead of trying to remember it all later. The template can evolve as you go."]},
+      {heading:"Experiment with Each Task", details:["For each of your 3 tasks, try it using at least 2 different tools or models. Mix and match from:","Gemini (try switching models using the model selector dropdown at the top of the chat — different models may produce different results)","Gemini canvas (document-style editing)","Gemini in Google Docs or Sheets (side panel)","NotebookLM (upload sources, then ask questions)","Pay attention to how the output changes depending on which tool or model you use. What's different? What's better or worse?"]},
+      {heading:"Compare and Note What You Learned", details:["For each task, record in your tool map: which tool and model produced the most useful result, what surprised you, and what didn't work well.","Start noticing patterns — are certain tools or models consistently better for certain types of work?"]},
+      {heading:"Add Safety Notes", details:["For each task, note any privacy or safety considerations you ran into or should flag (e.g., \"don't paste student writing with names into Gemini chat\")."]},
+      {heading:"Finalize Your Tool Map", details:["Review and clean up your template into a finished tool map: task → best tool/model → why → safety note.","This doesn't need to be fancy — a table, a doc, or a slide works fine. The value is in what you learned by trying, not the format."]}
+    ],
+    proof:"",
+    deliverables:{
+      artifact:"Add to your Mission Tracker: link to your tool map (3 tasks → tools/models tried → what worked → safety notes)",
+      reflection:"Complete in your Mission Tracker: What went well (+), what was tricky (–), what you'll do next (Next)",
+      classroomMove:"Try this: Use the best tool-task pairing you discovered in your actual planning or workflow this week."
+    },
+    guideMe:"Guide me through experimenting with Gemini and NotebookLM on real teaching tasks. Ask me what 3 tasks I want to try, then walk me through testing each one with different tools and models (including switching models in the model selector) so I can compare results and build a tool map from what I learn."
+  },
+  {
+    num:3, phase:"foundation", color:"var(--accent)", colorSoft:"var(--accent-soft)",
+    title:"Deep Research Sprint",
+    overview:"Run the same research question through Gemini Deep Research and NotebookLM Deep Research, then compare the outputs, the experience, and what each tool does best.",
+    tools:["Gemini","NotebookLM"],
+    artifact:"Comparison document (same question, two tools — outputs, strengths, limitations)",
+    privacy:false,
+    steps:[
+      {heading:"Choose a Research Question", details:["Pick a question relevant to your teaching practice — something you'd genuinely want to learn more about.","Examples: a new instructional strategy, a content-area topic you're planning to teach, a policy question, or a trend in education.","Make sure it's specific enough to get useful results but broad enough to generate a real research experience."]},
+      {heading:"Run It Through Gemini Deep Research", details:["Open Gemini and use the Deep Research feature with your question.","Review the report it generates: What sources did it find? How did it organize the information? How detailed and accurate does the output feel?","Try following up in chat — ask clarifying questions, push on a specific finding, or ask it to go deeper on one area."]},
+      {heading:"Run the Same Question Through NotebookLM", details:["Open NotebookLM and create a new notebook.","In the Sources section, click the dropdown and select \"Deep Research\" — then enter the same research question you used with Gemini.","NotebookLM will find and load sources for you based on your question.","Once sources are loaded, ask NotebookLM the same research question in the chat. Compare: How does it handle the question differently?","Try following up in chat — ask it to compare sources, find disagreements, or pull specific evidence."]},
+      {heading:"Explore NotebookLM Studio", details:["Try the Audio Overview feature in NotebookLM's studio — generate a podcast-style summary of your sources.","Experiment with other studio outputs (FAQs, study guides, briefing docs, etc.).","Consider: When would these formats be useful for your work or for students?"]},
+      {heading:"Create Your Comparison Document", details:["Create a document (Google Doc or similar) that puts the two experiences side by side:","What did each tool do well? Where did each fall short?","How did the outputs differ in depth, accuracy, tone, and usefulness?","When would you reach for Gemini Deep Research vs. NotebookLM in the future?","What surprised you about either tool?","This document is your artifact for this mission."]}
+    ],
+    proof:"",
+    deliverables:{
+      artifact:"Add to your Mission Tracker: link to your comparison document — Gemini Deep Research vs. NotebookLM (same question, outputs, strengths, limitations, and when you'd use each)",
+      reflection:"Complete in your Mission Tracker: What went well (+), what was tricky (–), what you'll do next (Next)",
+      classroomMove:"Try this: Use whichever tool impressed you more to research something you're planning to teach or work on this week."
+    },
+    guideMe:"Guide me through running a research question in both Gemini Deep Research and NotebookLM (using the Deep Research option in NotebookLM's Sources dropdown). Ask me what topic I want to explore, then walk me through using each tool step by step — including NotebookLM's chat and studio features — and help me create a comparison document of what each tool does best."
+  },
+  {
+    num:4, phase:"precision", color:"var(--violet)", colorSoft:"var(--violet-soft)",
+    title:"Data Analyst",
+    overview:"Use AI to help you notice patterns in student work or data and translate those patterns into a 1-page Insights into Action report.",
+    tools:["Gemini"],
+    artifact:"1-page Insights into Action report",
+    privacy:false,
+    steps:[
+      {heading:"Choose a small dataset", details:["8–15 exit tickets (typed or summarized)","One rubric row across a class (counts by level)","1–2 multiple-choice items with response totals","A short list of common errors you observed"]},
+      {heading:"Organize the info", details:["Put the data into one of these formats: a simple list of responses, a table with columns (response / score / notes), or counts by category (e.g., 12 chose B, 6 chose C)."]},
+      {heading:"Manually note 2–3 \"first impressions\"", details:["What patterns do you think you see? (This keeps you in the driver's seat.)"]},
+      {heading:"Build a rich prompt with context", details:["Upload or attach your data file to the conversation — don't paste the raw data into the prompt itself.","In the prompt, provide the context that helps AI make sense of the data:","What the assignment was and what students had been learning","Your first impressions and observations","Then ask AI to identify: 3 likely patterns, 2 possible misconceptions, and 2 \"what else might explain this?\" alternatives.","The more context you provide alongside the data, the more useful the AI's analysis will be."]},
+      {heading:"Reality check", details:["Review the AI's output against your knowledge of students. What aligns with your impressions? What feels off?","Note anything you'd adjust, add, or push back on — your professional judgment matters more than the AI's analysis."]},
+      {heading:"Convert insights into action", details:["Ask AI to help you create a 1-page Insights into Action report that includes:","Key patterns and misconceptions identified","Recommended next steps: a reteach move, small-group plan, extension option, and hinge questions to check understanding","Include any adjustments from your reality check in the prompt.","Review and revise the report — make sure it reflects your professional judgment, not just the AI's suggestions."]}
+    ],
+    proof:"",
+    deliverables:{
+      artifact:"Add to your Mission Tracker: link to your 1-page Insights into Action report (patterns → context → next steps)",
+      reflection:"Complete in your Mission Tracker: What went well (+), what was tricky (–), what you'll do next (Next)",
+      classroomMove:"Try this: Pick one action from your report and try implementing it this week."
+    },
+    guideMe:"Guide me through analyzing student data to find patterns and create an Insights into Action report. Ask me what data I have and what format it's in, then walk me step by step: first impressions → building a context-rich prompt → AI analysis → reality check → creating a 1-page report with next steps."
+  },
+  {
+    num:5, phase:"precision", color:"var(--violet)", colorSoft:"var(--violet-soft)",
+    title:"Visual Reasoning",
+    overview:"Learn to create useful visuals with Gemini — diagrams, illustrations, graphics, slides, and more — by experimenting with different types and refining through iteration.",
+    tools:["Gemini"],
+    artifact:"2–3 visuals created with Gemini + prompts used + notes on what worked",
+    privacy:false,
+    steps:[
+      {heading:"Brainstorm 2–3 visuals you actually need", details:["Think about your practice broadly — instruction, presentations, communication, classroom environment.","Examples: a diagram for a lesson, a graphic for a slide deck, an illustration for a handout, a visual for a bulletin board, an infographic for a newsletter, a concept map for a unit.","Pick 2–3 that span different types so you can see the range of what Gemini can do."]},
+      {heading:"Create your first visual", details:["Open Gemini and start a new conversation.","Make sure image generation is enabled in your tools settings.","When prompting, explicitly ask Gemini to create or generate an image — otherwise it may produce a plan or description instead of an actual visual.","Be specific in your prompt: include the subject, style, key elements, intended audience, and how it will be used.","Look at what Gemini generates. What's close? What's off?","Iterate — refine your prompt based on what you see. Try adjusting the style, layout, level of detail, or specific elements. Aim for at least 2–3 rounds of revision on this first visual."]},
+      {heading:"Create your second (and third) visual", details:["Try a different type of visual this time — if your first was a diagram, try an illustration or graphic.","Experiment with different prompting strategies: detailed descriptions vs. simple requests, specifying a style (flat design, hand-drawn, infographic-style), or asking Gemini to revise specific parts.","Notice what Gemini handles well and where it struggles."]},
+      {heading:"Reflect on what you learned", details:["Across your 2–3 visuals, what patterns did you notice?","What types of visuals does Gemini do well? Where does it fall short?","What prompting strategies made the biggest difference in output quality?","Save the prompts you used alongside the visuals — these are as valuable as the images themselves."]}
+    ],
+    proof:"",
+    deliverables:{
+      artifact:"Add to your Mission Tracker: your 2–3 visuals + the prompts you used + brief notes on what worked and what didn't",
+      reflection:"Complete in your Mission Tracker: What went well (+), what was tricky (–), what you'll do next (Next)",
+      classroomMove:"Try this: Use one of your visuals in your practice this week, or take a prompt that worked well and create a new image you can use right away."
+    },
+    guideMe:"Guide me through creating visuals with Gemini. Ask me what types of visuals I need for my practice, then walk me through prompting, evaluating the output, and iterating to improve the results. Help me try 2–3 different types so I can learn what Gemini does well and where it struggles."
+  },
+  {
+    num:6, phase:"precision", color:"var(--violet)", colorSoft:"var(--violet-soft)",
+    title:"Automations",
+    overview:"Create a reusable prompt template or prompt chain that automates a repetitive task — learning to write precise, constraint-driven AI instructions you can use again and again.",
+    tools:["Gemini"],
+    artifact:"A reusable prompt template or prompt chain + one tested output + 'what I will/won't automate' note",
+    privacy:false,
+    steps:[
+      {heading:"Identify a repetitive task", details:["Pick something you do regularly that follows a similar pattern each time.","Instructional examples: writing exit tickets, generating do-now prompts, creating rubric language, building review activities.","Communication examples: drafting parent emails, writing feedback comments, composing newsletter blurbs, preparing meeting agendas."]},
+      {heading:"Choose your automation format", details:["You have two options — pick the one that fits your task:","Option A: Prompt template — a Google Doc with fill-in-the-blank fields. Each time you need the output, you fill in the blanks and paste the prompt into Gemini.","Option B: Prompt chain — a sequence of 2–4 prompts you run in order, where each prompt builds on the previous output. Save the chain in a doc so you can reuse it.","A template works best for tasks with a consistent format. A chain works best for tasks that need multiple passes (e.g., draft → refine → format)."]},
+      {heading:"Write the constraints first", details:["Before writing the prompt(s), define the boundaries:","Tone and voice (professional, warm, concise, etc.)","Length and format expectations","What must always be included","What must never be included (sensitive info, assumptions about students, etc.)"]},
+      {heading:"Build and test version 1", details:["Write your prompt template or prompt chain.","Test it with a realistic example — use real details (or realistic stand-ins) to see how the output looks.","Evaluate: Is it usable as-is? What needs adjusting?"]},
+      {heading:"Refine with a second test", details:["Adjust your prompts based on the first test — tighten language, add missing constraints, fix formatting issues.","Test again with a different example to make sure improvements hold across cases, not just the first one."]},
+      {heading:"Add a \"human check\" step", details:["Decide what you'll always review or edit before using the output.","Write a short \"what I will and won't automate\" note — what's safe to let AI draft, and where does your judgment need to stay in the loop?"]}
+    ],
+    proof:"",
+    deliverables:{
+      artifact:"Add to your Mission Tracker: link to your reusable prompt template or prompt chain (in a Google Doc) + one tested output + your \"what I will/won't automate\" note",
+      reflection:"Complete in your Mission Tracker: What went well (+), what was tricky (–), what you'll do next (Next)",
+      classroomMove:"Try this: Put your automation to work on a real task this week and note what you'd tweak."
+    },
+    guideMe:"Guide me through creating a reusable automation for a repetitive task. Ask me what task I want to automate and help me decide whether a prompt template or a prompt chain is the better fit. Then walk me through writing the prompts, defining constraints, testing twice, and adding a human-check step."
+  },
+  {
+    num:7, phase:"builder", color:"var(--amber)", colorSoft:"var(--amber-soft)",
+    title:"Instructional Content Pipeline",
+    overview:"Build a custom Gem in Gemini that serves as your personal instructional content pipeline — taking the prompt-writing skills from Mission 6 and packaging them into a reusable AI assistant.",
+    tools:["Gemini"],
+    artifact:"A working Gem (instructional content pipeline) + one lesson package it produced",
+    privacy:false,
+    steps:[
+      {heading:"Understand What a Gem Is", details:["A Gem is a custom AI assistant you create in Gemini with its own instructions, personality, and purpose.","Think of it as a saved set of instructions that Gemini follows every time you use it — so you don't have to re-explain your pipeline from scratch each time.","You'll find the option to create a Gem in Gemini's side menu under \"Gem manager.\""]},
+      {heading:"Define Your Pipeline", details:["Before building the Gem, decide what your pipeline should do. A good starting point:","Step A: Draft (outline, task, or questions based on a learning target)","Step B: Differentiate (supports + extensions for different learners)","Step C: Finalize (student-facing directions + rubric or checklist + teacher notes)","Think about your constraints: What grade level, subject, tone, and format do you typically need?"]},
+      {heading:"Build Your Gem", details:["Open the Gem manager in Gemini and create a new Gem.","Give it a clear name (e.g., \"Lesson Builder\" or \"Content Pipeline\").","Tip: Use Gemini itself to help you draft the Gem instructions — describe what you want the Gem to do in a regular chat, and ask Gemini to help you write clear, specific instructions you can paste into the Gem builder.","In the Gem builder, you can also upload documents to the Knowledge section — rubrics, standards, exemplars, or templates that the Gem should reference every time it runs.","Write instructions that tell the Gem:","What it does (your 3-step pipeline)","What to always include (learning target, differentiation, student directions)","What format to use (how you want the output structured)","Any constraints (reading level, time limits, tone, accessibility)","Be specific — the better your instructions, the more consistent the output."]},
+      {heading:"Test It in the Preview Window", details:["Use the Gem preview window on the right side of the builder to test your Gem without leaving the editor.","Give it a learning target and any relevant constraints, then let it run through the pipeline.","Review the output: Is it usable? What needs adjusting? Because you're in the builder, you can make changes immediately."]},
+      {heading:"Refine the Gem Instructions", details:["Based on your preview test, tighten the Gem's instructions right away.","Add constraints you forgot, clarify the output format, or adjust the tone.","Test again in the preview with a different lesson to see if the improvements hold."]},
+      {heading:"Stress-test for \"AI-durability\"", details:["Look at what your Gem produced and consider: Could a student use AI to bypass the thinking in this task?","If so, add at least one of these to your Gem's instructions: require local/contextual references, include justification or reflection, build in process documentation, or add a peer interaction requirement."]}
+    ],
+    proof:"",
+    deliverables:{
+      artifact:"Add to your Mission Tracker: your working Gem (link or screenshot of instructions) + one completed lesson/task package it produced",
+      reflection:"Complete in your Mission Tracker: What went well (+), what was tricky (–), what you'll do next (Next)",
+      classroomMove:"Try this: Use your Gem to plan a real lesson this week, or teach the lesson package it produced."
+    },
+    guideMe:"Guide me through building a custom Gem in Gemini that serves as my instructional content pipeline. Ask me about my grade level, subject, and what I typically need when planning lessons. Then walk me through writing the Gem instructions, testing it with a real lesson, and refining it for consistency."
+  },
+  {
+    num:8, phase:"builder", color:"var(--amber)", colorSoft:"var(--amber-soft)",
+    title:"Context Engineering",
+    overview:"Build a \"Context Pack\" — a Google Drive folder of key documents — so AI produces outputs that match your curriculum, expectations, and student needs. Then test it in both Gemini and NotebookLM.",
+    tools:["Gemini","NotebookLM"],
+    artifact:"Context Pack (Google Drive folder) + master prompt + 2 tested outputs",
+    privacy:false,
+    steps:[
+      {heading:"Choose one unit or recurring task", details:["Pick something you return to regularly: a writing unit, lab reports, Socratic discussions, problem sets, a project-based learning cycle, etc."]},
+      {heading:"Create your Context Pack as a Google Drive folder", details:["Create a new folder in Google Drive for your Context Pack.","Gather and add the documents that define what \"good\" looks like for this unit or task:","Learning goals or standards (a short doc or section of your curriculum guide)","Rubric or success criteria","An exemplar (or a description of what strong work looks like)","Common misconceptions (a list or notes from past experience)","Accommodations/UDL supports (non-sensitive, general strategies)","A \"Do/Don't\" list (tone, length, format, what to include and avoid)","These can be existing docs you already have — you don't need to create everything from scratch."]},
+      {heading:"Write a master prompt", details:["Write a single prompt that references your context pack and requests a specific output.","Example: \"Using the standards, rubric, and exemplar I've provided, draft 3 writing prompts and a student-friendly checklist for this unit.\"","Save the master prompt as a separate doc — not inside your Context Pack folder, since anything in the folder becomes part of the context the AI reads."]},
+      {heading:"Test in Gemini", details:["Open Gemini and upload the files from your Context Pack folder (or reference them via Google Drive).","Run your master prompt and review the output.","How well does it align with your rubric, tone, and expectations? What's missing or off?"]},
+      {heading:"Test in NotebookLM", details:["Create a new notebook in NotebookLM and add your Context Pack documents as sources.","Run the same master prompt (or adapt it for NotebookLM's format).","Compare: How does NotebookLM's output differ from Gemini's? Does grounding the AI in your specific documents change the quality or accuracy?"]},
+      {heading:"Refine and decide", details:["Based on both tests, refine both your master prompt and your Context Pack:","Tighten the prompt — add constraints, clarify audience, remove anything that led to off-target output.","Update the folder — add documents that were missing, remove ones that added noise, or revise existing docs for clarity.","Test the refined combination once more in whichever tool performed better.","Note which tool you'd reach for in the future for this type of context-heavy work, and why."]}
+    ],
+    proof:"",
+    deliverables:{
+      artifact:"Add to your Mission Tracker: link to your Context Pack (Google Drive folder) + master prompt + 2 tested outputs (one from Gemini, one from NotebookLM)",
+      reflection:"Complete in your Mission Tracker: What went well (+), what was tricky (–), what you'll do next (Next)",
+      classroomMove:"Try this: Use something your context pack generated in your planning or with students this week."
+    },
+    guideMe:"Guide me through building a context pack for my [course/unit]. Ask me what documents I already have (rubrics, standards, exemplars), then help me organize them into a Google Drive folder, write a master prompt, and test it in both Gemini and NotebookLM so I can compare which tool handles my context better."
+  },
+  {
+    num:9, phase:"builder", color:"var(--amber)", colorSoft:"var(--amber-soft)",
+    title:"Mini AI Learning Experience",
+    overview:"Use Gemini to build a small, web-based learning application or experience for students — something they interact with directly, without needing to use AI themselves.",
+    tools:["Gemini"],
+    artifact:"Working web-based learning experience + student instructions + 2 test runs",
+    privacy:false,
+    steps:[
+      {heading:"Choose a learning goal and format", details:["Pick one specific thing you want students to learn, practice, or explore.","The key: students will interact with the finished product (a web page, quiz, interactive activity, etc.) — they will not be using AI directly.","Some possibilities:","An interactive practice activity (vocabulary matching, concept sorting, drag-and-drop)","A self-paced review or study tool","A guided exploration or simulation","A formative check with instant feedback","Keep it small — one learning goal, one clear interaction."]},
+      {heading:"Define the student experience", details:["What does the student see when they open it?","What do they do? (Click, type, drag, answer, explore?)","What do they produce or learn by the end?","Think about the flow: clear starting point → activity → outcome. The simpler and more focused, the better."]},
+      {heading:"Use Gemini to build it", details:["Open Gemini and select the Canvas tool before you start — this allows Gemini to generate and preview interactive web content directly.","Describe your learning experience in detail. Be specific about:","The content and subject matter","The type of interaction (quiz, matching, sorting, exploration, etc.)","The look and feel you want","Any feedback or scoring the app should provide","Gemini will generate HTML, CSS, and JavaScript that you can preview and iterate on in the canvas.","Don't worry about being a coder — describe what you want in plain language and let Gemini handle the technical parts."]},
+      {heading:"Test it yourself — twice", details:["Open the generated application and go through it as a student would.","Test with two different scenarios: What happens if a student gets everything right? What about common mistakes?","Does the activity actually require thinking? Is the feedback helpful? Is anything confusing or broken?","Note what worked and what needs fixing."]},
+      {heading:"Refine and finalize", details:["Go back to Gemini with your notes and ask it to fix issues — adjust the content, improve feedback, fix layout problems, or add instructions.","Write brief student-facing instructions: What is this? What do they do? How do they access it?","Make sure the experience has a clear starting point, a clear task, and a clear outcome."]}
+    ],
+    proof:"",
+    deliverables:{
+      artifact:"Add to your Mission Tracker: link to your working web-based learning experience + student instructions + notes from 2 test runs",
+      reflection:"Complete in your Mission Tracker: What went well (+), what was tricky (–), what you'll do next (Next)",
+      classroomMove:"Try this: Share your learning experience with students this week. To make it accessible, you can embed it in a Google Site: create a new Google Site (or use an existing one), add an \"Embed\" block, paste the HTML code Gemini generated, and share the Site link with students."
+    },
+    guideMe:"Guide me through using Gemini to build a small web-based learning application for students. Ask me what learning goal I'm targeting and what type of interaction I'm imagining. Then help me describe it clearly to Gemini, generate the application, test it, and refine it until it's ready for students — keeping in mind that students won't be using AI directly, just the finished product."
+  },
+  {
+    num:10, phase:"showcase", color:"var(--green)", colorSoft:"var(--green-soft)",
+    title:"Showcase + Scale",
+    overview:"Package what you've learned into a 15-minute micro-PD session that another staff member could facilitate — complete with a facilitation guide, hands-on activity, and everything someone needs to run it.",
+    tools:["Gemini","NotebookLM"],
+    artifact:"Facilitation guide for a 15-minute micro-PD session",
+    privacy:false,
+    steps:[
+      {heading:"Choose one artifact from Missions 2–9", details:["Pick something that made a real difference in your practice — a tool map, a visual, a Gem, a prompt chain, a context pack, a student-facing experience, etc.","Choose the one you're most excited to share and that you think would be most useful for colleagues."]},
+      {heading:"Write a learning objective", details:["Complete this sentence: \"Teachers will be able to _______________ in 10 minutes.\"","Keep it focused — one clear, achievable outcome for a 15-minute session."]},
+      {heading:"Design a 15-minute agenda", details:["2 min: Why this matters — what problem does this solve? What was it like before vs. after?","10 min: Hands-on try — participants do a simplified version of what you built. Provide the prompts, the steps, and any materials they need to get started immediately.","3 min: Share + next step — participants share what they created, and you give them one low-risk action to try this week."]},
+      {heading:"Add guardrails", details:["Include a brief reminder about responsible use: privacy, verification, and human judgment.","This can be a sentence at the start, a note in the facilitation guide, or a quick verbal reminder — it doesn't need to be a separate slide."]},
+      {heading:"Build the facilitation guide using AI", details:["Use Gemini to help you draft the facilitation guide. Provide it with your learning objective, agenda, and the artifact you're sharing, then ask it to help you create a single document that includes:","Learning objective","15-minute agenda with timing","The prompts and/or materials participants will use during the hands-on portion","A sample output (so the facilitator knows what \"good\" looks like)","Guardrails reminder","The one-thing-to-try-this-week action","Review and revise what Gemini produces — make sure it sounds like you and accurately represents your work.","The goal: someone who wasn't in your cohort could pick this up and run it."]},
+      {heading:"Plan your \"ask\"", details:["What's the one low-risk thing you want participants to try after the session?","How will they share back what they tried? (Quick email, a form, a 2-minute share at the next team meeting, etc.)"]}
+    ],
+    proof:"",
+    deliverables:{
+      artifact:"Add to your Mission Tracker: link to your completed facilitation guide (objective, agenda, prompts, sample output, guardrails, and follow-up action — all in one document)",
+      reflection:"Complete in your Mission Tracker: What went well (+), what was tricky (–), what you'll do next (Next)",
+      classroomMove:"Try this: Run your micro-PD with a colleague or team — or pick a date and put it on the calendar."
+    },
+    guideMe:"Guide me through creating a facilitation guide for a 15-minute micro-PD session based on my AI Champions work. Ask me which artifact I want to share and who my audience is. Then help me write a focused learning objective, design a 15-minute agenda with a 10-minute hands-on activity, and package everything into a facilitation guide that someone else could pick up and run."
+  }
+];
+
+/* ═══ RENDER CARDS ═══ */
+const grid=document.getElementById('missionGrid');
+
+function renderCards(filter='all'){
+  grid.innerHTML='';
+  const filtered=filter==='all'?missions:missions.filter(m=>m.phase===filter);
+  filtered.forEach((m,i)=>{
+    const card=document.createElement('div');
+    card.className='mission-card';
+    card.dataset.phase=m.phase;
+    card.dataset.missionNum=m.num;
+    const toolChips=m.tools.map(t=>`<span class="tool-chip">${t}</span>`).join('');
+
+    // Build Tool Quick Reference HTML if present
+    let toolRefHTML='';
+    if(m.toolRef){
+      const cards=m.toolRef.map(t=>`<div class="tool-ref-card"><h4>${t.name}</h4><p>${t.desc}</p><div class="tool-example">Example: ${t.example}</div></div>`).join('');
+      toolRefHTML=`<div class="tool-ref" id="toolRef-${m.num}"><div class="tool-ref-toggle" onclick="event.stopPropagation();this.parentElement.classList.toggle('open')"><span class="tool-ref-label">📋 Tool Quick Reference</span><span class="tool-ref-arrow">▾</span></div><div class="tool-ref-body"><div class="tool-ref-inner">${cards}</div></div></div>`;
+    }
+
+    const stepGroups=m.steps.map((s,j)=>{
+      let detailsHTML='';
+      if(s.details&&s.details.length>0){
+        detailsHTML=`<ul class="step-details">${s.details.map(d=>`<li>${d}</li>`).join('')}</ul>`;
+      }
+      let stepHTML=`<div class="step-group"><div class="step-heading"><span class="step-num">${String(j+1).padStart(2,'0')}</span>${s.heading}</div>${detailsHTML}</div>`;
+      // Insert tool reference after step 2 (index 1)
+      if(m.toolRef && j===1){
+        stepHTML+=toolRefHTML;
+      }
+      return stepHTML;
+    }).join('');
+
+    card.innerHTML=`
+      <div class="card-stripe" style="background:linear-gradient(90deg,${m.color},transparent)"></div>
+      <div class="card-body">
+        <div class="card-top">
+          <span class="mission-number">Mission ${String(m.num).padStart(2,'0')}</span>
+          <span class="phase-badge" style="color:${m.color};background:${m.colorSoft}">${m.phase}</span>
+        </div>
+        <div class="card-title">${m.title}</div>
+        <div class="card-overview">${m.overview}</div>
+        <div class="card-meta">
+          <div class="meta-row"><span class="meta-label">Tools</span><span class="meta-value">${toolChips}</span></div>
+          <div class="meta-row"><span class="meta-label">Artifact</span><span class="meta-value">${m.artifact}</span></div>
+          ${m.privacy?'<div class="meta-row"><span class="meta-label">Note</span><span class="meta-value"><span class="privacy-pill">⚠ De-identify all student data</span></span></div>':''}
+        </div>
+        <div class="card-expand">
+          <hr class="card-rule">
+          <div class="expand-inner">
+            <div class="steps-label">Detailed Instructions</div>
+            ${stepGroups}
+            <div class="deliverables-box">
+              <div class="deliverables-header">
+                <span class="deliverables-label">Mission Deliverables</span>
+                <span class="tracker-link">→ Log in your Mission Tracker</span>
+              </div>
+              <div class="deliverable-field">
+                <div class="field-label"><span class="field-icon">📎</span> Artifact</div>
+                <div class="field-value">${m.deliverables.artifact}</div>
+              </div>
+              <div class="deliverable-field">
+                <div class="field-label"><span class="field-icon">💬</span> Reflection</div>
+                <div class="field-value">${m.deliverables.reflection}</div>
+              </div>
+              <div class="deliverable-field">
+                <div class="field-label"><span class="field-icon">🎯</span> Putting It into Practice</div>
+                <div class="field-value">${m.deliverables.classroomMove}</div>
+              </div>
+            </div>
+            <div class="guide-box"><div class="guide-label">Guide Me Prompt</div><div class="guide-explainer">Want the AI to walk you through this mission step by step? Copy the prompt below into Gemini. It will ask you questions and guide you — not do the work for you.</div><div class="guide-text">"${m.guideMe}"</div><button class="guide-copy-btn" data-prompt="${m.guideMe.replace(/"/g,'&quot;')}">Copy prompt</button></div>
+          </div>
+        </div>
+        <div class="card-footer">
+          <span class="expand-hint"><span class="expand-arrow">▾</span><span class="expand-text">View details</span></span>
+        </div>
+      </div>`;
+    card.addEventListener('click',(e)=>{
+      if(e.target.closest('.guide-copy-btn')) return;
+      const was=card.classList.contains('expanded');
+      document.querySelectorAll('.mission-card.expanded').forEach(c=>{c.classList.remove('expanded');c.querySelector('.expand-text').textContent='View details'});
+      if(!was){card.classList.add('expanded');card.querySelector('.expand-text').textContent='Collapse'}
+    });
+    grid.appendChild(card);
+    setTimeout(()=>card.classList.add('visible'),60*i);
+  });
+}
+
+/* ═══ PHASE FILTER ═══ */
+document.getElementById('phaseLegend').addEventListener('click',e=>{
+  const tag=e.target.closest('.phase-tag');
+  if(!tag)return;
+  document.querySelectorAll('.phase-tag').forEach(t=>t.classList.remove('active'));
+  tag.classList.add('active');
+  renderCards(tag.dataset.phase);
+});
+
+/* ═══ VIEW TOGGLE ═══ */
+document.querySelectorAll('.view-btn').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    document.querySelectorAll('.view-btn').forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+    grid.classList.toggle('list-view',btn.dataset.view==='list');
+  });
+});
+
+/* ═══ SCROLL REVEAL ═══ */
+const revealObs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');revealObs.unobserve(e.target)}});
+},{threshold:0.12});
+document.querySelectorAll('.reveal').forEach(el=>revealObs.observe(el));
+
+/* ═══ NAV EFFECTS ═══ */
+window.addEventListener('scroll',()=>{
+  document.getElementById('mainNav').classList.toggle('scrolled',window.scrollY>10);
+});
+
+const navSections=['overview','pacing','missions','support'];
+const navObs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      document.querySelectorAll('.nav-links button').forEach(b=>b.classList.remove('active'));
+      const btn=document.getElementById('nav-'+e.target.id);
+      if(btn) btn.classList.add('active');
+    }
+  });
+},{threshold:0.2});
+navSections.forEach(id=>{const el=document.getElementById(id);if(el)navObs.observe(el)});
+
+function smoothNav(id){
+  const t=document.getElementById(id);
+  if(!t)return;
+  window.scrollTo({top:t.getBoundingClientRect().top+window.pageYOffset-64,behavior:'smooth'});
+}
+
+/* ═══ HERO STATUS ═══ */
+(function(){
+  const start=new Date('2026-03-09');
+  const now=new Date();
+  const msPerWeek=7*24*60*60*1000;
+  const weeksSince=Math.floor((now-start)/msPerWeek);
+  const el=document.getElementById('heroStatus');
+  const text=el.querySelector('.status-text');
+
+  if(now<start){
+    el.classList.add('pre-launch');
+    const days=Math.ceil((start-now)/(24*60*60*1000));
+    text.textContent=days===1?'Begins tomorrow':'Begins in '+days+' days — March 9, 2026';
+  } else if(weeksSince<12){
+    el.classList.add('in-progress');
+    const currentWeek=weeksSince+1;
+    text.textContent='Week '+currentWeek+' of 12 in progress';
+  } else {
+    el.classList.add('completed');
+    text.textContent='Program complete — now go lead';
+  }
+})();
+
+/* ═══ GUIDE PROMPT COPY ═══ */
+document.addEventListener('click',e=>{
+  const btn=e.target.closest('.guide-copy-btn');
+  if(!btn) return;
+  e.stopPropagation();
+  const prompt=btn.dataset.prompt;
+  navigator.clipboard.writeText(prompt).then(()=>{
+    btn.textContent='Copied!';
+    btn.classList.add('copied');
+    setTimeout(()=>{
+      btn.textContent='Copy prompt';
+      btn.classList.remove('copied');
+    },2000);
+  }).catch(()=>{
+    // Fallback for older browsers
+    const ta=document.createElement('textarea');
+    ta.value=prompt;ta.style.position='fixed';ta.style.opacity='0';
+    document.body.appendChild(ta);ta.select();
+    document.execCommand('copy');document.body.removeChild(ta);
+    btn.textContent='Copied!';
+    btn.classList.add('copied');
+    setTimeout(()=>{
+      btn.textContent='Copy prompt';
+      btn.classList.remove('copied');
+    },2000);
+  });
+});
+
+/* ═══ VERTICAL JOURNEY TIMELINE ═══ */
+const programStart = new Date('2026-03-09');
+const weekData = [
+  {week:1, mission:"Mission Tracker", artifact:"Tracker + goals", phase:"foundation", phaseColor:"var(--accent)", phaseLabel:"Foundation", phaseSoft:"var(--accent-soft)"},
+  {week:2, mission:"Model / Tool Mapping", artifact:"Tool map from experimentation", phase:"foundation", phaseColor:"var(--accent)", phaseLabel:"Foundation", phaseSoft:"var(--accent-soft)"},
+  {week:3, mission:"Deep Research Sprint", artifact:"Side-by-side tool comparison", phase:"foundation", phaseColor:"var(--accent)", phaseLabel:"Foundation", phaseSoft:"var(--accent-soft)"},
+  {week:4, mission:"Data Analyst", artifact:"Insights into Action report", phase:"precision", phaseColor:"var(--violet)", phaseLabel:"Precision", phaseSoft:"var(--violet-soft)"},
+  {week:5, mission:"Visual Reasoning", artifact:"2–3 visuals + prompts + notes", phase:"precision", phaseColor:"var(--violet)", phaseLabel:"Precision", phaseSoft:"var(--violet-soft)"},
+  {week:6, mission:"Automations", artifact:"Prompt template or chain + tested output", phase:"precision", phaseColor:"var(--violet)", phaseLabel:"Precision", phaseSoft:"var(--violet-soft)"},
+  {week:7, mission:"Content Pipeline", artifact:"Working Gem + lesson package", phase:"builder", phaseColor:"var(--amber)", phaseLabel:"Builder", phaseSoft:"var(--amber-soft)"},
+  {week:8, mission:"Context Engineering", artifact:"Context pack + master prompt", phase:"builder", phaseColor:"var(--amber)", phaseLabel:"Builder", phaseSoft:"var(--amber-soft)"},
+  {week:9, mission:"Mini AI Learning Experience", artifact:"Student-facing AI experience", phase:"builder", phaseColor:"var(--amber)", phaseLabel:"Builder", phaseSoft:"var(--amber-soft)"},
+  {week:10, mission:"Showcase + Scale", artifact:"Micro-PD facilitation guide", phase:"showcase", phaseColor:"var(--green)", phaseLabel:"Showcase", phaseSoft:"var(--green-soft)"},
+  {week:11, mission:null, artifact:null, phase:"buffer", phaseColor:"", phaseLabel:"Buffer", phaseSoft:""},
+  {week:12, mission:null, artifact:null, phase:"buffer", phaseColor:"", phaseLabel:"Buffer", phaseSoft:""}
+];
+
+function buildTimeline(){
+  const container=document.getElementById('journeyTimeline');
+  const progressBar=document.getElementById('journeyProgress');
+  const now=new Date();
+  const msPerWeek=7*24*60*60*1000;
+  const weeksSinceStart=Math.floor((now-programStart)/msPerWeek);
+  const currentWeek=weeksSinceStart+1;
+
+  let lastPhase='';
+  const fragment=document.createDocumentFragment();
+
+  weekData.forEach(w=>{
+    const weekStart=new Date(programStart.getTime()+(w.week-1)*msPerWeek);
+    const weekEnd=new Date(weekStart.getTime()+6*24*60*60*1000);
+    const dateRange=weekStart.toLocaleDateString('en-US',{month:'short',day:'numeric'})+' – '+weekEnd.toLocaleDateString('en-US',{month:'short',day:'numeric'});
+    const isBuffer=w.phase==='buffer';
+    const isCurrent=w.week===currentWeek;
+    const isCompleted=w.week<currentWeek;
+
+    // Phase divider
+    if(w.phase!==lastPhase){
+      lastPhase=w.phase;
+      const divider=document.createElement('div');
+      divider.className='phase-divider';
+      if(isBuffer){
+        divider.innerHTML=`<span class="phase-label-pill" style="color:var(--ink-faint);background:var(--bg-warm);border:1px dashed var(--border)">Buffer Weeks</span>`;
+      } else {
+        divider.innerHTML=`<span class="phase-label-pill" style="color:${w.phaseColor};background:${w.phaseSoft}">${w.phaseLabel} Phase</span>`;
+      }
+      fragment.appendChild(divider);
+    }
+
+    let stateClass='';
+    if(isCurrent) stateClass='current';
+    else if(isCompleted) stateClass='completed';
+    else if(isBuffer) stateClass='buffer';
+
+    const node=document.createElement('div');
+    node.className=`journey-node ${stateClass}`;
+    node.innerHTML=`
+      <div class="node-dot-wrap"><div class="node-dot"></div></div>
+      <div class="node-card" ${!isBuffer?`data-mission-num="${w.week}"`:''}>
+        <div class="node-top">
+          <span class="node-week">Week ${w.week}</span>
+          <span class="node-date">${dateRange}</span>
+        </div>
+        <div class="node-title">${isBuffer?'Catch up, refine, or get ahead':w.mission}</div>
+        ${!isBuffer?`<div class="node-artifact">${w.artifact}</div>`:''}
+        ${isCurrent?'<div class="node-current-badge">You are here</div>':''}
+        ${!isBuffer?'<div class="node-link">View mission →</div>':''}
+      </div>
+    `;
+
+    // Click to scroll to mission card
+    if(!isBuffer){
+      const card=node.querySelector('.node-card');
+      card.addEventListener('click',()=>{
+        scrollToMission(w.week);
+      });
+    }
+
+    fragment.appendChild(node);
+  });
+
+  // Append after the journey-line
+  container.appendChild(fragment);
+
+  // Progress bar height
+  const progressPct=Math.min(Math.max(((currentWeek-0.5)/12)*100,0),100);
+  progressBar.style.height=progressPct+'%';
+}
+
+function scrollToMission(missionNum){
+  // Make sure we're showing all phases so the card is visible
+  document.querySelectorAll('.phase-tag').forEach(t=>t.classList.remove('active'));
+  document.querySelector('.phase-tag[data-phase="all"]').classList.add('active');
+  renderCards('all');
+
+  // Small delay to let cards render, then find and scroll
+  setTimeout(()=>{
+    const targetCard=document.querySelector(`.mission-card[data-mission-num="${missionNum}"]`);
+    if(!targetCard) return;
+
+    // Scroll to card
+    const navHeight=64;
+    const cardTop=targetCard.getBoundingClientRect().top+window.pageYOffset-navHeight-20;
+    window.scrollTo({top:cardTop,behavior:'smooth'});
+
+    // Expand it after scroll completes
+    setTimeout(()=>{
+      // Close any open cards
+      document.querySelectorAll('.mission-card.expanded').forEach(c=>{
+        c.classList.remove('expanded');
+        c.querySelector('.expand-text').textContent='View details';
+      });
+      // Expand target
+      targetCard.classList.add('expanded');
+      targetCard.querySelector('.expand-text').textContent='Collapse';
+      // Brief highlight flash
+      targetCard.style.boxShadow='0 0 0 2px var(--accent), '+getComputedStyle(document.documentElement).getPropertyValue('--shadow-lg');
+      setTimeout(()=>targetCard.style.boxShadow='',1500);
+    },600);
+  },100);
+}
+
+buildTimeline();
+
+/* ═══ INIT ═══ */
+renderCards();
+</script>
+</body>
+</html>
